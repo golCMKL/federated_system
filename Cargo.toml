@@ -1,0 +1,32 @@
+[package]
+name = "candle-app"
+version = "0.1.1"
+edition = "2024"
+
+[lib]
+name = "candle_app"
+path = "src/lib.rs"
+
+[[bin]]
+name = "server"
+path = "server/server.rs"
+
+[[bin]]
+name = "client"
+path = "client/client.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
+candle-core = "0.8.3"
+candle-nn = "0.8.3"
+candle-datasets = "0.8.3"
+hf-hub = { version = "0.4.2", features = ["tokio"] }
+clap = { version = "4.5.31", features = ["derive"] }
+anyhow = "1.0.96"
+tokio = { version = "1.44.0", features = ["io-std", "net", "time", "sync", "rt-multi-thread", "signal"] }
+bincode = "1.3"
+base64 = "0.22"
+rand = "0.8"
